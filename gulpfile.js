@@ -4,12 +4,21 @@ var gulp = require('gulp'),
     $ = require('gulp-load-plugins')();
 
 /*
+ * Configuration
+ */
+var config = {
+  bootstrapDir : './bower_components/bootstrap-sass'
+};
+
+/*
  * Environment's configuration Developer
  */ 
 gulp.task('sass', function(){
-  return gulp.src('src/css/*.sass')
+  return gulp.src('src/css/*.s*ss')
       .pipe($.sourcemaps.init())
-      .pipe($.sass().on('error',$.sass.logError))
+      .pipe($.sass({
+                    includePaths: [config.bootstrapDir + '/assets/stylesheets'],
+        }).on('error',$.sass.logError))
       .pipe($.autoprefixer({ browser: ['last 2 versions'], cascade: false }))
       .pipe($.sourcemaps.write())
       .pipe(gulp.dest('.tmp'))
@@ -49,8 +58,11 @@ gulp.task('default', ['sass']);
  */ 
 
 gulp.task('sass:prod', function(){
-  return gulp.src('src/css/*.sass')
-      .pipe($.sass({outputStyle:'compressed'}).on('error',$.sass.logError))
+  return gulp.src('src/css/*.s*ss')
+      .pipe($.sass({
+        outputStyle:'compressed',
+        includePaths: [config.bootstrapDir + '/assets/stylesheets'],
+        }).on('error',$.sass.logError))
       .pipe($.autoprefixer({ browsers: ['last 2 versions'], cascade: false }))
       .pipe(gulp.dest('dist'))
 });

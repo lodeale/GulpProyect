@@ -1,0 +1,23 @@
+{
+  "name": "gulp_base",
+  "description": "Gulp base",
+  "main": "index.js",
+  "authors": [
+    "Samana"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "gulp"
+  ],
+  "homepage": "https://github.com/lodeale/GulpProyect",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7"
+  }
+}
