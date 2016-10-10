@@ -95,7 +95,7 @@ gulp.task('js:prod', function() {
   gulp.src('src/js/*.js')
     .pipe($.plumber())
     .pipe($.uglify({compress:true}))
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('dist/js/'))
 });
 
 
