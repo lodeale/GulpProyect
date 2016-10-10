@@ -14,7 +14,7 @@ var config = {
  * Environment's configuration Developer
  */ 
 gulp.task('sass', function(){
-  return gulp.src('src/css/*.s*ss')
+  return gulp.src(['src/css/*.s*ss','src/css/*.css'])
       .pipe($.plumber())
       .pipe($.sourcemaps.init())
       .pipe($.sass({
@@ -74,7 +74,7 @@ gulp.task('default', ['sass']);
  */ 
 
 gulp.task('sass:prod', function(){
-  return gulp.src('src/css/*.s*ss')
+  return gulp.src(['src/css/*.s*ss','src/css/*.css'])
       .pipe($.plumber())
       .pipe($.sass({
         outputStyle:'compressed',
