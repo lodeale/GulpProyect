@@ -15,10 +15,11 @@ var config = {
  */ 
 gulp.task('sass', function(){
   return gulp.src('src/css/*.s*ss')
+      .pipe($.plumber())
       .pipe($.sourcemaps.init())
       .pipe($.sass({
                     includePaths: [config.bootstrapDir + '/assets/stylesheets'],
-        }).on('error',$.sass.logError))
+        }))
       .pipe($.autoprefixer({ browser: ['last 2 versions'], cascade: false }))
       .pipe($.sourcemaps.write())
       .pipe(gulp.dest('.tmp'))
@@ -27,6 +28,7 @@ gulp.task('sass', function(){
 
 gulp.task('pug', function(){
   return gulp.src('src/*.pug')
+          .pipe($.plumber())
           .pipe($.pug())
           .pipe(gulp.dest('.tmp'))
 });
@@ -59,6 +61,7 @@ gulp.task('default', ['sass']);
 
 gulp.task('sass:prod', function(){
   return gulp.src('src/css/*.s*ss')
+      .pipe($.plumber())
       .pipe($.sass({
         outputStyle:'compressed',
         includePaths: [config.bootstrapDir + '/assets/stylesheets'],
@@ -69,12 +72,14 @@ gulp.task('sass:prod', function(){
 
 gulp.task('pug:prod', function(){
   return gulp.src('src/*.pug')
+          .pipe($.plumber())
           .pipe($.pug())
           .pipe(gulp.dest('dist'));
 });
 
 gulp.task('js', function() {
   gulp.src('src/js/*.js')
+    .pipe($.plumber())
     .pipe($.uglify({compress:true}))
     .pipe(gulp.dest('dist'))
 });
