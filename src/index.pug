@@ -2,13 +2,81 @@ doctype html
 html
   head
     meta(charset="UTF-8")
-    title Test
+    title ManitoManitas
     link(rel='stylesheet',href='include.css',type='text/css')
+    link(rel='stylesheet',href='carousel.css',type='text/css')
+    link(rel='stylesheet',href='font-awesome.css',type='text/css')
     link(rel='stylesheet',href='style.css',type='text/css')
-    script(type='text/javascript', src='js/app.js')
-    script(type='text/javascript', src='js/jquery.js')
   body
-    section.container
-      .box(class='col-lg-4')
-        h1 Hola Mundo
-        p  Dolor natus minima cumque ad voluptas expedita dicta ipsa quis. Obcaecati eligendi exercitationem impedit distinctio temporibus. Reiciendis enim aut debitis maxime illum, odit impedit ut. Laborum porro nobis adipisci molestias?
+    div(class="container")
+      include menu
+      include carusel
+      div(class="form-inscription col-lg-3")
+        form
+          h2  Inscribirse
+          div(class="form-group")
+            label Nombre
+            input(type="text",name="name",class="form-control")
+          div(class="form-group")
+            label Apellido
+            input(type="text",name="surname",class="form-control")
+          div(class="form-group")
+            button(type="submit", class="btn btn-primary") Inscribir
+            button(class="btn btn-large btn-secondary") Cerrar
+      div(class="section-services")
+        div(class="col-lg-4")
+          img(src="img/icono_1.png")
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            |tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            |quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            |consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            |cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            |proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        div(class="col-lg-4")
+          img(src="img/icono_2.png")
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            |tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            |quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            |consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            |cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            |proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        div(class="col-lg-4")
+          img(src="img/icono_3.jpg")
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            |tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            |quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            |consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            |cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            |proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    footer(class="col-lg-12")
+      div(class="col-lg-4")
+        h2 Information:
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          |tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          |quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          |consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          |cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          |proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      div(class="col-lg-4")
+        h2 ¿Necesita ayuda?
+        form
+          input(type="text",placeholder="Nombre",class="form-control")
+          input(type="text",placeholder="Nombre",class="form-control")
+          textarea(cols="7",rows="5",class="form-control")
+      div(class="col-lg-4")
+        div(class="social-icon")
+          a(href="#")
+            i(class="fa fa-facebook-square fa-3x color-facebook")
+            i(class="fa fa-twitter-square fa-3x color-twitter")
+            i(class="fa fa-google-plus-square fa-3x color-google-plus")
+            i(class="fa fa-linkedin-square fa-3x color-linkedin")
+        hr
+        ul
+          li Direccion: Av Italia 4566 
+          li Telefono: (54) 1232 23423423 
+          li Provincia: Barcelona 
+          li Pais: España
+      block scripts
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js")
+        script(type='text/javascript', src='js/app.js')
